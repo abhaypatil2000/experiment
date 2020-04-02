@@ -19,6 +19,7 @@
 #define ub upper_bound
 #define lb lower_bound
 #define sot(a) sort(a.begin(), a.end())
+#define sbsot(a) stable_sort(a.begin(), a.end())
 #define fox(a) for (auto x : a)
 #define foy(a, b) for (auto a : b)
 #define deb(x) cout << #x << " " << x << endl;
@@ -30,5 +31,5 @@ using namespace std;
 
 int main()
 {
-
+	
 }
