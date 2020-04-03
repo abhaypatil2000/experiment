@@ -21,6 +21,7 @@ struct node
 };
 //height of a leaf node is 0 and that of external node is -1
 //this can be changed in the line 3 of int height, line 3 in int balance, line 5 in node * insertnode, ht in both constructors
+//It is assumed that all nodes are different
 int height(node * root)
 {
     if (root == NULL)
