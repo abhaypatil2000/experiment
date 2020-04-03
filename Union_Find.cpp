@@ -4,8 +4,8 @@ struct UnionFind
 	vector<int> rank;
 	UnionFind(int N)
 	{
-		v.resize(N + 5);
-		rank.resize(N + 5, 1);
+		v.resize(N);
+		rank.resize(N, 1);
 		int i;
 		for (i = 0; i < N; i++)
 			v[i] = i;
@@ -19,13 +19,13 @@ struct UnionFind
 			return;
 		if (rank[x] > rank[y])
 		{
-			v[b] = x;
-			rank[x]++;
+			v[y] = x;
+			rank[x] += rank[y];
 		}
 		else
 		{
-			v[a] = y;
-			rank[y] = rank[y] + rank[x];
+			v[x] = y;
+			rank[y] += rank[x];
 		}
 		//v[a] = v[b];
 	}
