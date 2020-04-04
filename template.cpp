@@ -34,6 +34,7 @@
 #define fills(a, b) for (auto ploopy = a.begin(); ploopy != a.end(); ploopy++) *ploopy = b;
 #define fill(a,v) memset(a, v, sizeof (a))
 #define fill(a, b) for (int ploopy = 0; ploopy < sizeof(a)/sizeof(a[0]); ploopy++) a[ploopy] = b;
+#define minheap(a) priority_queue<a, vector<a>, greater<a>>
 using namespace std;
 ll mox = 1e9 + 7;
 
