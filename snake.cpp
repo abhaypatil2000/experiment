@@ -87,12 +87,13 @@ void backend()
 
 void print()
 {
-	cout << "\033[2J\033[1;1H";
+	cout << "\033[2J\033[1;1H";// corresponds to clear console for windows, linux and macos
 
 	for (i = 0; i <= n + 1; i++)
 	{
 		for (j = 0; j <= m + 1; j++)
 		{
+			cout << " ";//try removing this line and experience the reason i added this
 			if (i == 0 || j == 0 || i == n + 1 || j == m + 1)
 				cout << "#";
 			else if (i == head.first && j == head.second)
@@ -105,7 +106,6 @@ void print()
 					cout << 'v';
 				else if (inp == 'w')
 					cout << '^';
-				//cout << "O";
 			}
 			else if (in_body(i, j))
 			{
@@ -147,7 +147,7 @@ int main()
 		input();
 		backend();
 		print();
-		Sleep(200);
+		Sleep(50);
 		#if _WIN32
 				Sleep(200);//in milliseconds//adjust this for the pace of the game
 		#else
