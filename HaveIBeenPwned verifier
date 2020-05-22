@@ -1,0 +1,38 @@
+import requests
+
+myProxy = {"https": "191.252.196.160.8080"}
+
+# myProxies = {'http': 'http:186.227.130.10'}
+prefix = "2018csb"
+entryNoStart = 1064
+# entryNoEnd = 1127
+entryNoEnd = 1064
+suffix = "@iitrpr.ac.in"
+
+# entryNoList = [prefix + str(entryNo) + suffix for entryNo in range(entryNoStart, entryNoEnd + 1)]
+
+emailIdList = []
+
+catchPhrase = "Not pwned on any"
+
+for entryNo in range(entryNoStart, entryNoEnd + 1):
+    emailIdList.append(prefix + str(entryNo) + suffix)
+
+# for i in emailIdList:
+#     print(i)
+
+address = "https://haveibeenpwned.com/account/"
+for emailId in emailIdList:
+    requestPage = address + emailId
+    # print(request)
+    # pageContent = requests.get("https://www.google.com/")
+    pageContent = requests.get(requestPage, proxies=None)
+    filePath = "/home/abhay/Desktop/html/"
+    fileName = str(emailId).replace(suffix, "").replace(prefix, "") + ".html"
+    open(filePath + fileName, "wb").write(pageContent.content)
+    print(fileName + "   ", end="")
+    # pageContent.json()
+    if (catchPhrase in str(pageContent.content)):
+        print("Y")
+    else:
+        print("N")
