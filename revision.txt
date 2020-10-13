@@ -1,0 +1,69 @@
+#include <limits>
+	1. cout << numeric_limits<type>::min() << endl;
+	2. cout << numeric_limits<type>::max() << endl;
+
+#include <climits>
+	1. INT_MIN, INT_MAX (U prefix for unsigned) -> (2 ^ 31), (2 * 10 ^ 9) // 32 bit
+	2. LONG_MIN, LONG_MAX (U prefix for unsigned) -> (2 ^ 31), (2 * 10 ^ 9) // 32 bit
+	3. LLONG_MIN, LLONG_MAX (U prefix for unsigned) -> (2 ^ 63), (9 * 10 ^ 18) // 64 bit
+
+#include <cfloat>
+	1. FLT_MIN, FLT_MAX
+	2. DBL_MIN, DBL_MAX
+	3. LDBL_MIN, LDBL_MAX
+
+#include <cmath>
+	1. double log(x) -> base e
+	2. double log10(x) -> base 10
+	3. double log2(x) -> base 2
+	4. double pow(a, b) -> a ^ b
+	5. double sqrt(x)
+	6. ceil(x), floor(x)
+	7. abs(x), fabs(x)
+	8. min(x), max(x)
+
+#include <cstdlib>
+	1. atoi, atof, atol, atoll
+	2. rand(), srand(x)
+	3. malloc, free
+
+#include <cstring>
+	1. memset(ptr, value, size)
+	2. strlen(ptr) // length of a c style string
+
+#include <algorithm>
+	1. find
+	2. count
+	3. swap
+	4. fill (fwd_itr first, fwd_itr last, value)
+	5. remove
+	6. unique
+	7. rotate(fwd_itr first, fwd_itr middle, fwd_itr last, bool cmp)
+	8. reverse
+	9. partition(fwd_itr first, fwd_itr last, bool unary_function(x)); // all true in first half, false in second half, returns itr to the first element in the false part
+	10. stable_partition (same as above)
+	11. sort, stable_sort
+	12. nth_element(fwd_itr first, fwd_itr middle, fwd_itr last, bool comp) -> middle element in its sorted order, according to the cmp
+	13. lower_bound, upper_bound, binary_search
+	14. make_heap, push_heap, pop_heap, sort_heap
+	15. min, max, minmax (pair of min, max)
+	16. min_element, max_element, minmax_element (pair of min_element, max_element)
+	17. next_permutation, prev_permutation
+
+#include <iterator>
+	1. distance(first, last) -> if random iterator then O(1), else O(N)
+
+#include <tuple>
+	1. tuple<int, int, char> my_tuple = make_tuple(first, second, third);
+	2. tie(a, b, c) = my_tuple
+	3. int a = get<0>(my_tuple) || get<1>(my_tuple) = 2 // access it as lvalue or rvalue
+
+#include <utility>
+	1. make_pair
+	2. pair data structure // not needed
+
+#include <iomanip>
+	1. cout << fixed << setprecision(10) << float/double << endl; // prints 10 decimal places, 0 if necessary
+	2. cout << setprecision(10) << float/double << endl; // prints with 10 digits, no extra 0 added
+	3. fixed / scientific / defaultfloat
+
