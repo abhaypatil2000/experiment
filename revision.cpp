@@ -31,6 +31,22 @@
 	1. memset(ptr, value, size)
 	2. strlen(ptr) // length of a c style string
 
+#include <string>
+	0. string::npos // maximum value of size_t in string, in find, it means no character found, and in substr, it means till the end
+	1. stoi(string s), stol(), stoll(), stoul(), stoull(), stof(), stoud(), stold() // converts string to type
+	2. to_string(type val) // returns a string which represents the digits of the numeric type
+	// type = int, long, long long, unsigned, unsigned long, unsigned long long, float, double, long double
+	3. operator + and += work as expected
+	4. push_back(c), pop_back()
+	5. s.insert(int position, string s2) || insert(int position, int #of_inserts, char c) || insert(const_itr position, char c) || insert(const_itr position, char * s) || insert(const_itr position, char * s, int n)
+	6. s.erase(int pos) || erase(int pos, int length) || erase(const_itr position) || erase(const_itr first, const_itr last)
+	7. s.find(string s2, int pos = 0) // finds the string s2 in the s starting from an offset of pos
+	7.1. s.find(char * s, int pos = 0) // same as above
+	7.2. s.find(char * s, int pos, int len) // len is the length of the sequence to watch
+	7.3. s.find(char c, int pos = 0) // finds the char c in s, starting from pos
+	// all the finds return an iterator to the first matched character, if no match then return string::npos
+	8. s.substr(int pos, int len) // returns a new modified dtring object // if len == string::npos, then all characters till the end
+
 #include <algorithm>
 	1. find (inp_itr first, inp_itr last, val) // returns the first instance
 	2. count (inp_itr first, inp_itr last, val)
